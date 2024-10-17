@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{article.title}}{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="article-detail">
+        <h1 class="index-page-top-article-title">{{article.title}}</h1>
+        <img class="article-detail-header-image" src="{{article.image.url}}" alt="Image for {{article.title}}" />
+        <div>
+            <h2 class="article-detail-snippet">{{article.snippet}}</h2>
+            <h3 class="article-detail-author">published by {{article.author.pen_name}} at {{article.published_date}}</h3>
+        </div>
+    </div>
+    <div class="article-content">
+        {{article.content|linebreaks}}
+    </div>
+</main>
+{% endblock %}

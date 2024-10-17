@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    {% if latest_article_list %}
+    <div>
+        <h1>Latest Articles</h1>
+    </div>
+    {% for article in latest_article_list %}
+        <a href="{% url 'article_detail' article.id %}">
+        <div class="article-tile">
+        <div>
+            <h1>{{article.title}}</h1>
+        </div>
+        <div>
+            {{article.snippet}}
+        </div>
+        <div>
+            by {{article.author.pen_name}} @ {{article.published_date}}
+        </div>
+        </div>
+    </a>
+        {% endfor %}
+        {% endif %}
+</main>
+{% endblock %}
