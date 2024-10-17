@@ -5,14 +5,14 @@
 {% block content %}
 <main class="main-content">
     {% if latest_article_list %}
-    <div>
+    <div class="latest-article-header">
         <h1>Latest Articles</h1>
     </div>
     {% for article in latest_article_list %}
         <a href="{% url 'article_detail' article.id %}">
         <div class="article-tile">
         <div>
-            <h1>{{article.title}}</h1>
+            <h2>{{article.title}}</h2>
         </div>
         <div>
             {{article.snippet}}

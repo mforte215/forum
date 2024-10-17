@@ -53,12 +53,11 @@ body {
 }
 
 .article-tile {
-  font-size: x-large;
   font-family: "Courier New", Courier, monospace;
-  margin: 0 0 3% 0;
+  margin: 0 0 2% 0;
 }
 
-.article-tile h1 {
+.article-tile h2 {
   margin: 0;
 }
 
@@ -78,6 +77,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .article-tile {
+    margin: 0 0 8% 0;
+  }
+
   .index-page-latest-article-feed-tile-link {
     flex: 1 1 100%;
   }
