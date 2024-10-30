@@ -9,7 +9,7 @@
         <h1>Latest Articles</h1>
     </div>
     {% for article in latest_article_list %}
-        <a href="{% url 'article_detail' article.id %}">
+        <a href="{% url 'article_detail' article.slug %}">
         <div class="article-tile">
         <div>
             <h2>{{article.title}}</h2>

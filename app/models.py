@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 import uuid
 
@@ -22,5 +23,10 @@ class Article(models.Model):
     image = models.ImageField(upload_to='images/', null=True)
     snippet = models.CharField(max_length=250)
     main_content = RichTextField(default='')
+    slug = models.SlugField(unique=True, db_index=True, blank=True, max_length=255)
     def __str__(self):
         return self.title
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Article, self).save(*args, **kwargs)
