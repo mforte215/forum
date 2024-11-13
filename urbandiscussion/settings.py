@@ -28,7 +28,7 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    'ckeditor',
+    'prose',
     "whitenoise.runserver_nostatic",
     "app",
     "django.contrib.admin",
