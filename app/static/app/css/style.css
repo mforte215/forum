@@ -76,6 +76,12 @@ body {
   font-style: italic;
 }
 
+.splash-page {
+  width: 60%;
+  margin: 10% auto;
+  font-size: xx-large;
+}
+
 @media (max-width: 600px) {
   .article-tile {
     margin: 0 0 8% 0;
