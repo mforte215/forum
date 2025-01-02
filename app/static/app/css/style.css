@@ -7,6 +7,12 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.other-page {
+  width: 60%;
+  margin: 10% auto;
+  font-size: xx-large;
+}
+
 /*8*8*8*8 NAVBAR 8*8*8*8*/
 
 /* Add a black background color to the top navigation */
@@ -36,7 +42,7 @@ body {
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #bb2b2b;
+  background-color: #5929ea;
   color: white;
 }
 
@@ -76,12 +82,6 @@ body {
   font-style: italic;
 }
 
-.splash-page {
-  width: 60%;
-  margin: 10% auto;
-  font-size: xx-large;
-}
-
 @media (max-width: 600px) {
   .article-tile {
     margin: 0 0 8% 0;
@@ -99,10 +99,6 @@ body {
   }
 
   .topnav a {
-    font-size: large;
-  }
-
-  .splash-page {
     font-size: large;
   }
 
