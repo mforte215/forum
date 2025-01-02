@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,8 +13,6 @@ SECRET_KEY = "lhkfsfwoe9f88fohielthtohw49t04t9wt4)R)*r88rw888r8rhewr38r38twtpw9e
 
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG=True
 
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
 # validation of the Host header in the incoming HTTP request. On other platforms you may need to
@@ -24,6 +23,7 @@ if IS_HEROKU_APP:
 else:
     ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]", "0.0.0.0"]
 
+DEBUG = False
 
 # Application definition
 
