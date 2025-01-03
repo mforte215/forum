@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "dfsklffskgjllghriheirgnvkdghligghithldkthugrkughkusriweogrhrytyhroeogy4949873867439348wr87fygwgff744yrf"
+SECRET_KEY = os.environ.get("S_KEY", None)
 
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
@@ -75,18 +75,10 @@ WSGI_APPLICATION = "urbandiscussion.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-        "default": {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'personal_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Winkel1991',
-        'HOST': 'localhost',
-        'PORT': '',
-        }
-    }
-
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+    'default': dj_database_url.config(
+        default= os.environ.get('DATABASE_URL', None)
+    )
+}
 
 
 
