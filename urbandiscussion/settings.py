@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "lhkfsfwoe9f88fohielthtohw49t04t9wt4)R)*r88rw888r8rhewr38r38twtpw9etpwrqhwaoeaepu9ufhsioeo4af44twe4q3m2r"
+SECRET_KEY = "dfsklffskgjllghriheirgnvkdghligghithldkthugrkughkusriweogrhrytyhroeogy4949873867439348wr87fygwgff744yrf"
 
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
@@ -77,10 +77,10 @@ WSGI_APPLICATION = "urbandiscussion.wsgi.application"
 DATABASES = {
         "default": {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'personal_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Winkel1991',
-        'HOST': 'localhost',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': '',
         }
     }
@@ -117,8 +117,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
