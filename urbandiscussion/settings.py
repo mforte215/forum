@@ -25,7 +25,7 @@ if IS_HEROKU_APP:
 else:
     ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]", "0.0.0.0"]
 
-DEBUG = True
+DEBUG = False
 
 # Application definition
 
