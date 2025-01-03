@@ -11,6 +11,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("S_KEY", None)
 
+SECURE_SSL_REDIRECT = True
+
 IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
 
 
