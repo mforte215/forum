@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
-import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,23 +11,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("S_KEY", None)
-
-SECURE_SSL_REDIRECT = True
-
-IS_HEROKU_APP = "DYNO" in os.environ and not "CI" in os.environ
-
+SECRET_KEY = os.getenv("S_KEY")
 
 # On Heroku, it's safe to use a wildcard for `ALLOWED_HOSTS``, since the Heroku router performs
 # validation of the Host header in the incoming HTTP request. On other platforms you may need to
 # list the expected hostnames explicitly in production to prevent HTTP Host header attacks. See:
 # https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-ALLOWED_HOSTS
-if IS_HEROKU_APP:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]", "0.0.0.0"]
 
-DEBUG = False
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]", "0.0.0.0"]
+
+DEBUG = True
+
+SECURE_SSL_REDIRECT = False
 
 # Application definition
 
@@ -78,9 +75,14 @@ WSGI_APPLICATION = "urbandiscussion.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default= os.environ.get('DATABASE_URL', None)
-    )
+        "default": {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PW'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv("DB_PORT"),
+        }
 }
 
 
@@ -122,21 +124,5 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = BASE_DIR / "static"
-
-
-# aws settings
-AWS_ACCESS_KEY_ID = os.getenv('ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('SECRET_KEY_ID')
-AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_ID')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-AWS_S3_FILE_OVERWRITE = True
-
-STORAGES = {
-"default": {
-    "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
-},
-"staticfiles": {
-    "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
-}
-}
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "static/"
