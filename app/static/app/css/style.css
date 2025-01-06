@@ -7,7 +7,7 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.other-page {
+.splash-page {
   width: 60%;
   margin: 10% auto;
   font-size: xx-large;
@@ -83,6 +83,10 @@ body {
 }
 
 @media (max-width: 600px) {
+  .splash-page {
+    font-size: medium;
+  }
+
   .article-tile {
     margin: 0 0 8% 0;
   }
