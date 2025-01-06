@@ -123,23 +123,20 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL = "static/"
 
-USE_S3 = os.getenv('USE_S3') == 'TRUE'
 
-if USE_S3:
-    # aws settings
-    AWS_ACCESS_KEY_ID = os.getenv('ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('SECRET_KEY_ID')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_ID')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_FILE_OVERWRITE = True
+# aws settings
+AWS_ACCESS_KEY_ID = os.getenv('ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('SECRET_KEY_ID')
+AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKET_ID')
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_FILE_OVERWRITE = True
 
-    STORAGES = {
-    "default": {
-        "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
-    },
-    "staticfiles": {
-        "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
-    }
-    }
+STORAGES = {
+"default": {
+    "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
+},
+"staticfiles": {
+    "BACKEND": "storages.backends.s3boto3.S3StaticStorage"
+}
+}
