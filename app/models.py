@@ -22,7 +22,6 @@ class Article(models.Model):
     published_date = models.DateTimeField(auto_now_add=True, editable=False)
     image = models.ImageField(upload_to='images/', null=True)
     snippet = models.CharField(max_length=250)
-    main_content = models.TextField(default='')
     content= RichTextField(default='')
     slug = models.SlugField(unique=True, db_index=True, blank=True, max_length=255)
     def __str__(self):
