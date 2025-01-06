@@ -4,11 +4,11 @@
 
 {% block content %}
 <main class="main-content">
-    {% if latest_article_list %}
+    {% if articles %}
     <div class="latest-article-header">
-        <h1>Latest Articles</h1>
+        <h1>Latest</h1>
     </div>
-    {% for article in latest_article_list %}
+    {% for article in articles %}
         <a href="{% url 'article_detail' article.slug %}">
         <div class="article-tile">
         <div>
@@ -23,6 +23,9 @@
         </div>
     </a>
         {% endfor %}
+        {% else %}
+        <h2>Sorry, No Articles Currently!</h2>
         {% endif %}
+
 </main>
 {% endblock %}
