@@ -13,7 +13,7 @@ def articleDetail(request, slug):
 
 def articleListView(request):
     try:
-        articles = Article.objects.all()[:5]
+        articles = Article.objects.all()[:50]
         context = {"articles": articles}
         return render(request, "app/articles.html", context)
     except:

@@ -8,21 +8,23 @@
     <div class="latest-article-header">
         <h1>Latest</h1>
     </div>
+    <div class="article-tile-container">
     {% for article in articles %}
-        <a href="{% url 'article_detail' article.slug %}">
         <div class="article-tile">
-        <div>
+            <a href="{% url 'article_detail' article.slug %}">
+            <div>
+                <img class="article-tile-image" src="{{article.image.url}}" alt="Image for {{article.title}}" />
+            </div>
+        <div class="article-tile-meta">
             <h2>{{article.title}}</h2>
-        </div>
-        <div>
-            {{article.snippet}}
-        </div>
-        <div>
-            by {{article.author.pen_name}} @ {{article.published_date}}
-        </div>
+            <p>{{article.snippet}}</p>
+            <p>by {{article.author.pen_name}} @ {{article.published_date}}</p>
         </div>
     </a>
+        </div>
+
         {% endfor %}
+    </div>
         {% else %}
         <h2>Sorry, No Articles Currently!</h2>
         {% endif %}
