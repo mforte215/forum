@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-weight: 400;
   font-style: normal;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .splash-page {
@@ -68,7 +68,6 @@ body {
 }
 
 .article-tile {
-  font-family: "Courier New", Courier, monospace;
   width: 20%;
   border-radius: 4px;
   text-align: center;
