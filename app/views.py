@@ -18,3 +18,6 @@ def articleListView(request):
         return render(request, "app/articles.html", context)
     except:
         raise Http404("No articles found!")
+    
+def experienceView(request):
+    return render(request, "app/experience.html")
