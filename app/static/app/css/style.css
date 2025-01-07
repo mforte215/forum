@@ -13,12 +13,55 @@ body {
   font-size: xx-large;
 }
 
+.hidden {
+  display: none;
+}
+
 .enter-link {
   color: black;
   text-decoration: none;
   border: 2px solid black;
   border-radius: 8px;
   padding: 8px;
+}
+
+.experience-container {
+  width: 25%;
+  margin: 5% auto;
+  font-size: xx-large;
+}
+
+.experience-row {
+  overflow: hidden;
+  margin: 2% 0;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#experience-name-one {
+  margin: 0;
+}
+
+#experience-name-two {
+  margin: 0;
+}
+
+#exp-details-one {
+  overflow: hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
 }
 
 /*8*8*8*8 NAVBAR 8*8*8*8*/
@@ -52,20 +95,47 @@ body {
   margin: 5% auto;
 }
 
-.article-tile-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
+.article-detail-title {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 2%;
 }
 
-.article-tile {
-  width: 20%;
-  border-radius: 4px;
-  text-align: center;
-  height: 30em;
+.article-detail-header-image {
+  width: 60%;
+  margin: 0 20% 0 20%;
+  height: 25em;
+  box-shadow: 0px 0px 5px 1px #000000;
+  border-radius: 3px;
+}
+
+.article-detail-snippet {
+  color: rgb(86, 86, 86);
+}
+
+.article-detail-author {
+  font-style: italic;
+}
+
+/* @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@ */
+/* ARTICLE LIST PAGE  */
+/* @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@ */
+
+.articles-main-content {
+  width: 80%;
+  margin: 2% auto;
+}
+
+.latest-article-header {
+  border-bottom: 2px solid black;
+  margin: 0 0 3% 0;
+}
+
+.latest-article-header h1 {
+  font-size: 5em;
+  margin: 0;
 }
 
 .article-tile-image {
@@ -88,26 +158,20 @@ body {
   margin: 0;
 }
 
-.article-detail-title {
+.article-tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.article-tile {
+  width: 20%;
+  border-radius: 4px;
   text-align: center;
-  font-size: 5em;
-  margin-bottom: 2%;
-}
-
-.article-detail-header-image {
-  width: 60%;
-  margin: 0 20% 0 20%;
-  height: 25em;
-  box-shadow: 0px 0px 5px 1px #000000;
-  border-radius: 3px;
-}
-
-.article-detail-snippet {
-  color: rgb(86, 86, 86);
-}
-
-.article-detail-author {
-  font-style: italic;
+  height: 30em;
 }
 
 @media screen and (max-width: 992px) {

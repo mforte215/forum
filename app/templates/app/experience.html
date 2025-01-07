@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Mark C Forte{% endblock %}
+
+
+{% block content %}
+
+<div class="experience-container">
+    <div>
+        <h1>Experience</h1>
+    </div>
+    <div class="experience-row" >
+        <p onclick="onClick(event)" id="experience-name-one"><span class="float-left">GlobalLogic</span> 
+        <span id="job-con-one" class="float-right">Content Engineering +</span></p>
+    </div>
+        <div class="hidden" id="exp-details-one">
+            <ul>
+                <li>Engineering Support for a major industry-leading LLM </li>
+            </ul>
+        </div>
+   
+    <div class="experience-row" >
+        <p onclick="onClick(event)" id="experience-name-two"><span class="float-left">JPMorganChase</span> 
+        <span id="job-con-two" class="float-right">Software Engineering +</span></p>
+    </div>
+            <div class="hidden" id="exp-details-two">
+                <ul>
+                    <li>Engineering Support for a major industry-leading LLM </li>
+                </ul>
+        </div>
+
+    <div>
+        <p
+    </div>
+</div>
+{% endblock %}
