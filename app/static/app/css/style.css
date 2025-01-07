@@ -40,11 +40,7 @@ body {
   cursor: pointer;
 }
 
-#experience-name-one {
-  margin: 0;
-}
-
-#experience-name-two {
+.experience-p {
   margin: 0;
 }
 
@@ -187,12 +183,6 @@ body {
 
   .main-content {
     margin: auto;
-  }
-
-  .experience-container {
-    width: 80%;
-    margin: 5% auto;
-    font-size: medium;
   }
 
   .article-tile-container {

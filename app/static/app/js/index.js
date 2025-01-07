@@ -8,7 +8,13 @@ function myFunction() {
 }
 
 function onClick(event) {
-    parentElement = event.target.parentNode.id
+    if (event.target.nodeName == 'SPAN') {
+        parentElement = event.target.parentElement.parentElement.id
+    }
+    else {
+        parentElement = event.target.id
+    }
+
     if (parentElement == "experience-name-one") {
         hiddenElement = document.getElementById('exp-details-one')
         if (hiddenElement.style.display == 'none' || hiddenElement.style.display == '') {
