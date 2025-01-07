@@ -11,7 +11,7 @@
     <div class="article-tile-container">
     {% for article in articles %}
         <div class="article-tile">
-            <a href="{% url 'article_detail' article.slug %}">
+            <a class="article-tile-link" href="{% url 'article_detail' article.slug %}">
             <div>
                 <img class="article-tile-image" src="{{article.image.url}}" alt="Image for {{article.title}}" />
             </div>
