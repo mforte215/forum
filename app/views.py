@@ -21,3 +21,6 @@ def articleListView(request):
     
 def experienceView(request):
     return render(request, "app/experience.html")
+
+def contactView(request):
+    return render(request, "app/contact.html")

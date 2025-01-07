@@ -170,6 +170,15 @@ body {
   height: 30em;
 }
 
+.social-links {
+  list-style: none;
+}
+
+.social-links a {
+  text-decoration: underline;
+  color: black;
+}
+
 @media screen and (max-width: 992px) {
   .article-tile {
     width: 45%;
@@ -213,6 +222,7 @@ body {
 
   .topnav a {
     font-size: large;
+    padding: 14px 6px;
   }
 
   .topnav.responsive {
